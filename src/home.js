@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import VerseReel from "./components/VerseReel";
 import { verses } from "./data/verses";
 
@@ -9,7 +9,7 @@ useEffect(() => {
   setVisibleVerses(verses);
 }, []);
 
-  const handleScroll = () => {
+   const handleScroll = useCallback(() => {
     const scrollTop = window.scrollY;
     const windowHeight = window.innerHeight;
     const docHeight = document.body.offsetHeight;
@@ -17,7 +17,7 @@ useEffect(() => {
     if (scrollTop + windowHeight >= docHeight - 100) {
       loadMoreVerses();
     }
-  };
+  }, []);
 
   const loadMoreVerses = () => {
     console.log('loadd')
@@ -28,9 +28,9 @@ useEffect(() => {
   };
 
 useEffect(() => {
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, [handleScroll]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]); // ✅ now stable & ESLint-safe
 
   return (
     <>
