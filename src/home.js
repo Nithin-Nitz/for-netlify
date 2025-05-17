@@ -7,8 +7,7 @@ const ReelsPage = () => {
 
   useEffect(() => {
     setVisibleVerses(verses);
-    console.log(visibleVerses)
-  }, []);
+  }, [verses]);
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
@@ -28,10 +27,10 @@ const ReelsPage = () => {
     });
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+useEffect(() => {
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [handleScroll]);
 
   return (
     <>
