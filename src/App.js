@@ -1,9 +1,10 @@
-import './App.css';
+import './App.scss';
+import ReelsPage from './home';
 
 const App = () => {
   return (
     <div className="App">
-      Testaaa
+        <ReelsPage />
     </div>
   );
 }

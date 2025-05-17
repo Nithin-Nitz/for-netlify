@@ -1,0 +1,60 @@
+ body,
+ html,
+ #root {
+     height: 100%;
+     margin: 0;
+     background: url('https://www.financialexpress.com/wp-content/uploads/2023/09/HD-wallpaper-lord-krishna-for-drawing-lord-krishna-for-lord-krishna-art.jpg') no-repeat center center fixed;
+     background-size: cover;
+     position: relative;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     color: white;
+ }
+
+        body, html {
+          margin: 0;
+          padding: 0;
+          color: white;
+          font-family: 'Segoe UI', sans-serif;
+          scroll-snap-type: y mandatory;
+          overflow-x: hidden;
+        }
+        .reel {
+          height: 100vh;
+          scroll-snap-align: start;
+        background-color: transparent;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+          box-sizing: border-box;
+        }
+        .overlay {
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background: rgba(0, 0, 0, 0.6);
+          z-index: 0;
+        }
+        .content {
+          z-index: 1;
+          text-align: center;
+          max-width: 600px;
+        }
+        .sanskrit {
+          font-size: 1.8rem;
+          font-style: italic;
+          margin-bottom: 0.5rem;
+        }
+        .transliteration {
+          font-size: 1.2rem;
+          color: #ccc;
+          margin-bottom: 1rem;
+        }
+        .translation {
+          font-size: 1.3rem;
+          margin-bottom: 1rem;
+        }
+        .meta {
+          font-size: 1rem;
+          color: #aaa;
+        }
