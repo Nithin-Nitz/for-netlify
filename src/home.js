@@ -5,9 +5,9 @@ import { verses } from "./data/verses";
 const ReelsPage = () => {
   const [visibleVerses, setVisibleVerses] = useState([]);
 
-  useEffect(() => {
-    setVisibleVerses(verses);
-  }, [verses]);
+useEffect(() => {
+  setVisibleVerses(verses);
+}, []);
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
